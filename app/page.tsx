@@ -1,113 +1,154 @@
-import Image from "next/image";
+
+import Button from "./components/common/Button";
+import { useState } from "react";
+import Head from "next/head";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    
+    return (
+      <div className="bg-base-100 text-neutral min-h-screen">
+        <Head>
+          <title>PennyPath - Track Your Finances Effortlessly</title>
+          <meta
+            name="description"
+            content="PennyPath helps you track your expenses, set financial goals, and gain financial insights."
+          />
+          <link rel="icon" href="/icons/favicon.ico" />
+        </Head>
+
+        <header className="bg-primary text-white py-4">
+          <div className="container mx-auto flex justify-between items-center">
+            <h1 className="text-3xl font-bold">PennyPath</h1>
+            <nav>
+              <a href="#features" className="ml-4">
+                Features
+              </a>
+              <a href="#pricing" className="ml-4">
+                Pricing
+              </a>
+              <a href="#contact" className="ml-4">
+                Contact
+              </a>
+            </nav>
+          </div>
+        </header>
+
+        <main className="container mx-auto px-4 py-10">
+          <section className="text-center">
+            <h2 className="text-5xl font-bold text-primary">
+              Track Your Finances Effortlessly
+            </h2>
+            <p className="mt-4 text-lg text-secondary">
+              PennyPath helps you track your expenses, set financial goals, and
+              gain financial insights.
+            </p>
+            <Button className="mt-6 bg-accent hover:bg-accent-dark">
+              Get Started
+            </Button>
+          </section>
+
+          <section id="features" className="mt-20">
+            <h3 className="text-3xl font-bold text-primary text-center">
+              Features
+            </h3>
+            <div className="flex flex-wrap justify-center mt-10">
+              <div className="w-full md:w-1/3 p-4">
+                <div className="bg-white shadow-lg rounded-lg p-6">
+                  <h4 className="text-2xl font-bold text-primary">
+                    Track Expenses
+                  </h4>
+                  <p className="mt-2 text-secondary">
+                    Easily track your daily expenses and categorize them for
+                    better insights.
+                  </p>
+                </div>
+              </div>
+              <div className="w-full md:w-1/3 p-4">
+                <div className="bg-white shadow-lg rounded-lg p-6">
+                  <h4 className="text-2xl font-bold text-primary">Set Goals</h4>
+                  <p className="mt-2 text-secondary">
+                    Set financial goals and track your progress towards
+                    achieving them.
+                  </p>
+                </div>
+              </div>
+              <div className="w-full md:w-1/3 p-4">
+                <div className="bg-white shadow-lg rounded-lg p-6">
+                  <h4 className="text-2xl font-bold text-primary">
+                    Gain Insights
+                  </h4>
+                  <p className="mt-2 text-secondary">
+                    Visualize your spending patterns with detailed charts and
+                    reports.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="pricing" className="mt-20">
+            <h3 className="text-3xl font-bold text-primary text-center">
+              Pricing
+            </h3>
+            <div className="flex flex-wrap justify-center mt-10">
+              <div className="w-full md:w-1/3 p-4">
+                <div className="bg-white shadow-lg rounded-lg p-6 text-center">
+                  <h4 className="text-2xl font-bold text-primary">Basic</h4>
+                  <p className="mt-2 text-secondary">$0/month</p>
+                  <p className="mt-2">Basic features for personal use.</p>
+                </div>
+              </div>
+              <div className="w-full md:w-1/3 p-4">
+                <div className="bg-white shadow-lg rounded-lg p-6 text-center">
+                  <h4 className="text-2xl font-bold text-primary">Premium</h4>
+                  <p className="mt-2 text-secondary">$9.99/month</p>
+                  <p className="mt-2">Advanced features for power users.</p>
+                </div>
+              </div>
+              <div className="w-full md:w-1/3 p-4">
+                <div className="bg-white shadow-lg rounded-lg p-6 text-center">
+                  <h4 className="text-2xl font-bold text-primary">
+                    Enterprise
+                  </h4>
+                  <p className="mt-2 text-secondary">Custom pricing</p>
+                  <p className="mt-2">Tailored solutions for businesses.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="contact" className="mt-20 text-center">
+            <h3 className="text-3xl font-bold text-primary">Contact Us</h3>
+            <p className="mt-4 text-secondary">
+              Have questions or need support? Reach out to us!
+            </p>
+            <form className="mt-6">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="input input-bordered w-full max-w-md"
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="input input-bordered w-full max-w-md mt-4"
+              />
+              <textarea
+                placeholder="Your Message"
+                className="textarea textarea-bordered w-full max-w-md mt-4"
+              ></textarea>
+              <Button className="mt-4 bg-primary">Send Message</Button>
+            </form>
+          </section>
+        </main>
+
+        <footer className="bg-primary text-white py-4 mt-20">
+          <div className="container mx-auto text-center">
+            <p>
+              &copy; {new Date().getFullYear()} PennyPath. All rights reserved.
+            </p>
+          </div>
+        </footer>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+    );
 }
